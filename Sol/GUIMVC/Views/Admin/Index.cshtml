@@ -1,0 +1,21 @@
+﻿@model IEnumerable<DataManager.Model.Problem>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Tasks</h2>
+
+<!--КНОПКА СОЗДАНИЯ ТОВАРА-->
+<div class="menuitem">
+    @Html.RouteLink("Добавить задачу",
+                    new { controller = "Admin", action = "CreateTask" },
+                            new { @id = "createtask", data_dialog_title = "Добавить задачу" })
+</div>
+<!--ГЛАВНАЯ ТАБЛИЦА-->
+
+@foreach (var item in Model)
+{
+    Html.RenderPartial("ProblemContent", item);
+}

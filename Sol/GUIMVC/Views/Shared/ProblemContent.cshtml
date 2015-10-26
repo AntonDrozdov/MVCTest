@@ -1,0 +1,37 @@
+﻿@model DataManager.Model.Problem
+
+<table>
+    <tr>
+        <td>
+            <div class="menuiteminTable">
+                @Html.RouteLink(@Model.Title,
+                new { controller = "Admin", action = "EditTask", id = @Model.Id },
+                new { @class = "edittask", data_dialog_title = "Редактирование задачи" })
+            </div></br>
+            @Model.Description</br>
+            @Model.StartDate</br>
+            @Model.EndDate</br>
+            @Model.Laboriousness</br>
+            @Model.ActualExecutiontime</br>
+            @Model.Performers</br>
+            @Model.Status</br>
+            <div class="menuiteminTable">
+                @Html.RouteLink("Удалить",
+                new { controller = "Admin", action = "DeleteTask", id = @Model.Id },
+                new { @class = "deletetask", data_dialog_title = "Удаление задачи" })
+            </div>
+        </td>
+        <td style = 'border:none;'>
+            @if (Model.ChildTasks.Count != 0)
+            {
+
+                <b>Подзадачи:</b>
+                foreach (var item in Model.ChildTasks)
+                {
+                    Html.RenderPartial("ProblemContent", item);
+                }
+
+            }
+        </td>
+    </tr>
+</table>
