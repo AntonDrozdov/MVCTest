@@ -15,7 +15,7 @@ namespace DataManager.Concrete.EFContexts
     public class CFDBContex : DbContext
     {
         public DbSet<Problem> Problems { get; set; }
-        public DbSet<Status> Statuses { get; set; }
+        //public DbSet<Status> Statuses { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

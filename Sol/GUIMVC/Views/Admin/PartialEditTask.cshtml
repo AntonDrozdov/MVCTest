@@ -1,0 +1,39 @@
+﻿@model DataManager.Model.Problem
+
+@using (Html.BeginForm("EditTask", "Admin", FormMethod.Post))
+{
+    <p>
+        <div class="editor-label">Наименование</div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Title)
+        </div>
+    </p>
+    <p>
+        <div class="editor-label">Описание</div>
+        @Html.EditorFor(model => model.Description)
+    </p>
+    <p>
+        <div class="editor-label">Дата окончания</div>
+        @Html.EditorFor(model => model.EndDate)
+    </p>
+    <p>
+        <div class="editor-label">Трудоемкость</div>
+        @Html.EditorFor(model => model.Laboriousness)
+    </p>
+    <p>
+        <div class="editor-label">Фактически затраченно</div>
+        @Html.EditorFor(model => model.ActualExecutiontime)
+
+    </p>
+    <p>
+        <div class="editor-label">Статус</div>
+        @Html.DropDownList("Status", ViewBag.Statuses as SelectList, Model.Status)
+    </p>
+    <p>
+        <div class="editor-label">Исполнители</div>
+        @Html.EditorFor(model => model.Performers)
+    </p>
+    <div class="savebuttonarea">
+        <input type="submit" value="Сохранить" id="savebutton" />
+    </div>
+}

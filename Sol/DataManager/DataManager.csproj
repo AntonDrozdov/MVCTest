@@ -50,7 +50,6 @@
     <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Concrete\EFContexts\CFDBContex.cs" />
     <Compile Include="Concrete\ImplRepository.cs" />
-    <Compile Include="Model\Status.cs" />
     <Compile Include="Model\Problem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -39,7 +39,6 @@ header, footer, nav, section {display: block;}
 .menuitem A.selected { color:white; }
 
 .menuiteminTable{
-    float:left;
     font-size:12px;
     text-align:center;
     border-radius:8px;
@@ -48,7 +47,7 @@ header, footer, nav, section {display: block;}
     color:black;
     border-radius:8px;
     padding:0px 5px 3px 5px;
-    width:80px;
+    width:150px;
 }
 .menuiteminTable:hover a{color:white;}
 .menuiteminTable A.selected { color:white; }
@@ -112,7 +111,7 @@ a:checked {text-decoration:none;color:black;}
     border-bottom:1px solid #ddd; */
     padding:5px;
     border:1px solid black;
-    border-radius:8px;  
+    border-radius:5px;  
     }
 .content  TABLE {  width:100%; }
 

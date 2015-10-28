@@ -3,34 +3,50 @@
 <table>
     <tr>
         <td>
-            <div class="menuiteminTable">
-                @Html.RouteLink(@Model.Title,
+            <table style="font-size:10px;border:none;">
+                <tr><td colspan="2" >
+                <div class="menuiteminTable" title="Просмотреть/Редактировать">
+                    @Html.RouteLink(@Model.Title,
                 new { controller = "Admin", action = "EditTask", id = @Model.Id },
                 new { @class = "edittask", data_dialog_title = "Редактирование задачи" })
-            </div></br>
-            @Model.Description</br>
-            @Model.StartDate</br>
-            @Model.EndDate</br>
-            @Model.Laboriousness</br>
-            @Model.ActualExecutiontime</br>
-            @Model.Performers</br>
-            @Model.Status</br>
-            <div class="menuiteminTable">
-                @Html.RouteLink("Удалить",
-                new { controller = "Admin", action = "DeleteTask", id = @Model.Id },
-                new { @class = "deletetask", data_dialog_title = "Удаление задачи" })
-            </div>
+                </div>
+                </td></tr>
+
+                <tr><td >Описание:</td><td>@Model.Description</td></tr>
+                <tr><td>Дата нач.</td><td>@Model.StartDate.ToString("d")</td></tr>
+                <tr><td>Дата ок.:</td><td> @Model.EndDate.ToString("d")</td></tr>
+                <tr><td>Тру-ть:</td><td>@Model.Laboriousness</td></tr>
+                <tr><td>Факт. исп.:</td><td>@Model.ActualExecutiontime</td></tr>
+                <tr><td>Исп-ли:</td><td>@Model.Performers</td></tr>
+                <tr><td>Статус:</td><td>@Model.Status</td></tr>
+                <tr>
+                    <td colspan="2" style=" text-align:center;">
+                        <div class="menuiteminTable">
+                            @Html.RouteLink("Добавить подзадачу",
+                         new { controller = "Admin", action = "CreateChildTask", id = @Model.Id },
+                new { @class = "createchildtask", data_dialog_title = "Добавить подзадачу" })
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style=" text-align:center;">
+                        <div class="menuiteminTable">
+                            @Html.RouteLink("Удалить",
+                                              new { controller = "Admin", action = "DeleteTask", id = @Model.Id },
+                                               new { @class = "deletetask", data_dialog_title = "Удаление задачи" })
+                        </div>
+                    </td>
+                </tr>
+            </table>
         </td>
         <td style = 'border:none;'>
             @if (Model.ChildTasks.Count != 0)
             {
-
                 <b>Подзадачи:</b>
                 foreach (var item in Model.ChildTasks)
                 {
                     Html.RenderPartial("ProblemContent", item);
                 }
-
             }
         </td>
     </tr>

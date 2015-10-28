@@ -1,0 +1,13 @@
+﻿@model DataManager.Model.Problem
+@using (Html.BeginForm())
+{
+    <p>ПРИ УДАЛЕНИИ ЗАДАЧИ УДАЛЯЕТСЯ И ВСЯ ИЕРАРХИЯ ЕЕ ПОДЗАДАЧ!!!</p>
+    <p>
+         @Html.DisplayFor(model => model.Title)
+    </p>
+
+    <div class="savebuttonarea">
+        <input type="submit" value="Delete" id="deletebutton" />
+    </div>
+}
+

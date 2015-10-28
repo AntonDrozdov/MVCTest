@@ -7,11 +7,11 @@
 
 <h2>Tasks</h2>
 
-<!--КНОПКА СОЗДАНИЯ ТОВАРА-->
+<!--КНОПКА СОЗДАНИЯ-->
 <div class="menuitem">
     @Html.RouteLink("Добавить задачу",
                     new { controller = "Admin", action = "CreateTask" },
-                            new { @id = "createtask", data_dialog_title = "Добавить задачу" })
+                    new { @id = "createtask", data_dialog_title = "Добавить задачу" })
 </div>
 <!--ГЛАВНАЯ ТАБЛИЦА-->
 
@@ -19,3 +19,63 @@
 {
     Html.RenderPartial("ProblemContent", item);
 }
+
+<script>
+    //!!!! перед тем как убрать комментарий Url.Action -добавить собаку!!!!
+    $(document).ready(function () {
+
+        $.ajaxSetup({ cache: false });
+        //СОЗДАНИЕ ПОЗИЦИИ
+        //открываем диалог создания товара
+        $("#createtask").on("click", function (e) {
+            e.preventDefault();
+            $("<div id='dialogContent'></div>").addClass("dialog").appendTo("body").load(this.href)
+            .dialog({   title: $(this).attr("data-dialog-title"),
+            close: function () { $(this).remove() }, modal: true, position: [100, 100], width: 400, buttons: {}});
+        });
+        //кнопка сохранения товара и закрытия соответствующего диалога
+        $("#savebutton").on("click", function (e) {e.preventDefault();$(this).closest(".dialog").dialog("destroy");});
+
+        //УДАЛЕНИЕ ПОЗИЦИИ
+        //открываем диалог удаления товара
+        $(".deletetask").on("click", function (e) {
+            e.preventDefault();
+            $("<div id='dialogContent'></div>").addClass("dialog").appendTo("body").load(this.href)
+            .dialog({   title: $(this).attr("data-dialog-title"),
+                        close: function () { $(this).remove() }, modal: true, position: [200, 200], width: 300, buttons: {}});
+        });
+        //кнопка удаления товара и закрытия соответствующего диалога
+        $("#deletebutton").on("click", function (e) { e.preventDefault(); $(this).closest(".dialog").dialog("destroy"); });
+
+        //РЕДАКТИРОВАНИЕ ПОЗИЦИИ
+        //открываем диалог редактирования товара
+        $(".edittask").on("click", function (e) {
+            e.preventDefault();
+            $("<div id='dialogContent'></div>").addClass("dialog").appendTo("body").load(this.href)
+            .dialog({
+                title: $(this).attr("data-dialog-title"),
+                close: function () { $(this).remove() }, modal: true, position: [100, 100], width: 400, buttons: {}
+            });
+        });
+        //для кнопки сохранения изменений применяется тотже обработчик что и для кнопки сохранения новой позиции, только
+        //post запрос она отправить в метод контроллера который создал эту форму, т.е. в метод EditGood
+        //ДОБАЛЕНИЕ ДОЧЕРНЕЙ
+        $(".createchildtask").on("click", function (e) {
+            e.preventDefault();
+            $("<div id='dialogContent'></div>").addClass("dialog").appendTo("body").load(this.href)
+            .dialog({
+                title: $(this).attr("data-dialog-title"),
+                close: function () { $(this).remove() }, modal: true, position: [100, 100], width: 400, buttons: {}
+            });
+        });
+
+
+        //закрывает любой диалог
+        $(".close").on("click", function (e) {
+            e.preventDefault();
+            $(this).closest(".dialog").dialog("destroy");
+        });
+
+
+    });
+</script>

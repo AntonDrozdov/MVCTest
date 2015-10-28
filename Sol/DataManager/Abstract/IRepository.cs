@@ -9,10 +9,12 @@ namespace DataManager.Abstract
 {
     public interface IRepository
     {
+ 
         IQueryable<Problem> GetTasks();
         Problem GetTask(int Id);
         void CreateTask(Problem _Task);
         void EditTask(Problem _Task);
+        Problem FindTask(int? Id);
         void DeleteTask(int Id);
     }
 }
