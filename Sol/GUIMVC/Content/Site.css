@@ -33,7 +33,7 @@ header, footer, nav, section {display: block;}
     color:black;
     border-radius:8px;
     padding:0px 5px 3px 5px;
-    width:150px;
+    width:180px;
 }
 .menuitem:hover a{color:white;}
 .menuitem A.selected { color:white; }

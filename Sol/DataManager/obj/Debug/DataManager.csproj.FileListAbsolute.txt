@@ -10,3 +10,15 @@ D:\DEVELOP\Solmvc\Sol\DataManager\bin\Debug\ru\EntityFramework.SqlServer.resourc
 D:\DEVELOP\Solmvc\Sol\DataManager\obj\Debug\DataManager.dll
 D:\DEVELOP\Solmvc\Sol\DataManager\obj\Debug\DataManager.pdb
 D:\DEVELOP\Solmvc\Sol\DataManager\obj\Debug\DataManager.csprojResolveAssemblyReference.cache
+E:\DEVELOP\MVCTest\Sol\DataManager\bin\Debug\DataManager.dll.config
+E:\DEVELOP\MVCTest\Sol\DataManager\bin\Debug\DataManager.dll
+E:\DEVELOP\MVCTest\Sol\DataManager\bin\Debug\DataManager.pdb
+E:\DEVELOP\MVCTest\Sol\DataManager\bin\Debug\EntityFramework.dll
+E:\DEVELOP\MVCTest\Sol\DataManager\bin\Debug\EntityFramework.SqlServer.dll
+E:\DEVELOP\MVCTest\Sol\DataManager\bin\Debug\EntityFramework.xml
+E:\DEVELOP\MVCTest\Sol\DataManager\bin\Debug\EntityFramework.SqlServer.xml
+E:\DEVELOP\MVCTest\Sol\DataManager\bin\Debug\ru\EntityFramework.resources.dll
+E:\DEVELOP\MVCTest\Sol\DataManager\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
+E:\DEVELOP\MVCTest\Sol\DataManager\obj\Debug\DataManager.csprojResolveAssemblyReference.cache
+E:\DEVELOP\MVCTest\Sol\DataManager\obj\Debug\DataManager.dll
+E:\DEVELOP\MVCTest\Sol\DataManager\obj\Debug\DataManager.pdb
